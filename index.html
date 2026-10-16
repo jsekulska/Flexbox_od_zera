@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona o parkach narodowych</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Parki narodowe w Polsce</h1>
+    </header>
+
+    <nav>
+        <button class="hamburger">
+        ☰
+        </button>
+
+        <ul class="menu">
+            <li><a href="index.html">Strona główna</a></li>
+            <li><a href="podstrona1.html">Mapa</a></li>
+            <li><a href="podstrona2.html">Historia</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="kolumna">
+            <h2>Podstawa prawna</h2>
+            <p>
+                Park narodowy – jedna z form ochrony przyrody w Polsce. Zgodnie z ustawą o ochronie przyrody z 2004 obejmuje obszar wyróżniający się szczególnymi wartościami przyrodniczymi, naukowymi, społecznymi, kulturowymi i edukacyjnymi, o powierzchni nie mniejszej niż 1000 ha, na którym ochronie podlega cała przyroda oraz walory krajobrazowe. 
+                Park narodowy tworzy się w celu zachowania różnorodności biologicznej, zasobów, tworów i składników przyrody nieożywionej i walorów krajobrazowych, przywrócenia właściwego stanu zasobów i składników przyrody oraz odtworzenia zniekształconych siedlisk przyrodniczych, siedlisk roślin, siedlisk zwierząt lub siedlisk grzybów. 
+                W Polsce wyodrębniono 23 parki narodowe.
+            </p>
+        </section>
+
+        <section class="kolumna">
+            <h2>Lista parków narodowych</h2>
+            <p>
+                Sed ut perspiciatis unde omnis iste natus error sit
+                voluptatem accusantium doloremque laudantium, totam rem
+                aperiam.
+            </p>
+            <img src="assets/img/ParkinarodowePL.png" alt="Mapa parków narodowych w Polsce" widt>
+        </section>
+
+        <section class="kolumna">
+            <h2>Kolumna 3</h2>
+            <p>
+                Nemo enim ipsam voluptatem quia voluptas sit aspernatur
+                aut odit aut fugit, sed quia consequuntur magni dolores eos.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+    <div class="footer-content">
+        <p>&copy; 2026 Projektowanie Serwisów WWW</p>
+    </div>
+</footer>
+
+<script>
+
+const hamburger =
+    document.querySelector('.hamburger');
+
+const menu =
+    document.querySelector('.menu');
+
+hamburger.addEventListener('click', () => {
+    menu.classList.toggle('active');
+});
+
+</script>
+
+</body>
+</html>
