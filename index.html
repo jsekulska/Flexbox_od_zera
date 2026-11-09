@@ -11,52 +11,123 @@
         <!-- Bootstrap Icons -->
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-</head>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+    </head>
+
 <body>
 
     <header>
-        <h1>Parki narodowe w Polsce</h1>
-               
+        <div class="hero">
+            <h1>Parki Narodowe w Polsce</h1>
+            <p>
+                Poznaj najcenniejsze obszary chronione Polski
+            </p>
+        </div>
+    </header>
+
+
+    <nav>
         <button id="menu-toggle" aria-label="Otwórz menu">
             <i class="bi bi-list"></i>
         </button>
 
-      <nav>                
+                      
         <ul class="menu">
-            <li><a href="index.html">Strona główna</a></li>
-            <li><a href="podstrona1.html">Mapa</a></li>
-            <li><a href="podstrona2.html">Historia</a></li>
+            <li><a href="#">Strona główna</a></li>
+            <li><a href="#">Mapa</a></li>
+            <li><a href="#">Historia</a></li>
+            <li class="dropdown">
+                <a href="#">Top 5 Parków Narodowych</a>
+                  <ul class="submenu">
+
+                   <li>
+                    <a href="#">
+                        <i class="bi bi-tree-fill"></i>
+                        Białowieski
+                    </a>
+                   </li>
+
+                   <li>
+                    <a href="#">
+                        <i class="bi bi-tree-fill"></i>
+                        Tatrzański
+                    </a>
+                   </li>
+
+                   <li>
+                    <a href="#">
+                        <i class="bi bi-tree-fill"></i>
+                        Pieniński
+                    </a>
+                   </li>
+                   <li>
+                    <a href="#">
+                        <i class="bi bi-tree-fill"></i>
+                        Babiogórski
+                    </a>
+                   </li>
+
+                   <li>
+                    <a href="#">
+                        <i class="bi bi-tree-fill"></i>
+                        Wigierski
+                    </a>
+                  </li>
+
+            </ul>
+          </li>
         </ul>
       </nav>
-    </header>
-
-
-    
         
     
     <main>
         <section class="kolumna">
-            <h2>Podstawa prawna</h2>
+            <h2 class="info">Podstawa prawna</h2>
             <p>
                 Park narodowy – jedna z form ochrony przyrody w Polsce. Zgodnie z ustawą o ochronie przyrody z 2004 obejmuje obszar wyróżniający się szczególnymi wartościami przyrodniczymi, naukowymi, społecznymi, kulturowymi i edukacyjnymi, o powierzchni nie mniejszej niż 1000 ha, na którym ochronie podlega cała przyroda oraz walory krajobrazowe. 
                 Park narodowy tworzy się w celu zachowania różnorodności biologicznej, zasobów, tworów i składników przyrody nieożywionej i walorów krajobrazowych, przywrócenia właściwego stanu zasobów i składników przyrody oraz odtworzenia zniekształconych siedlisk przyrodniczych, siedlisk roślin, siedlisk zwierząt lub siedlisk grzybów. 
                 
             </p>
+
+
+            <div class="galeria">
+
+             <div class="tor">
+
+                <img src="assets/img/TPN_gallery_1.jpg" alt="Tatrzański Park Narodowy" data-opis="Tatrzański Park Narodowy">
+                <img src="assets/img/KPN_gallery_2.jpg" alt="Karkonoski Park Narodowy" data-opis="Karkonoski Park Narodowy">
+                <img src="assets/img/DPN_gallery_3.jpg" alt="Wigierski Park Narodowy" data-opis="Jezioro Wigry z lotu ptaka">
+                <img src="assets/img/SPN_gallery_4.jpg" alt="Słowiński Park Narodowy" data-opis="Wydmy w Słowińskim Parku Narodowym">
+                <img src="assets/img/OPN_gallery_5.jpg" alt="Ojcowski Park Narodowy" data-opis="Ojcowski Park Narodowy">
+                <img src="assets/img/PPN_gallery_6.jpg" alt="Pieniński Park Narodowy" data-opis="Pieniński Park Narodowy">
+
+             </div>
+
+             <div id="opisGalerii">Najedź kursorem na zdjęcie.</div>
+            </div>
         </section>
 
         <section class="kolumna">
-            <h2>Lista parków narodowych</h2>
+            <h2 class="info">Lista parków narodowych</h2>
             <p>
                 W Polsce wyodrębniono 23 parki narodowe.
             </p>
-            <img src="assets/img/ParkinarodowePL.png" alt="Mapa parków narodowych w Polsce" widt>
+            <img src="assets/img/ParkinarodowePL.png" alt="Mapa parków narodowych w Polsce">
         </section>
 
-        <section class="kolumna">
-            <div class="lista-parkow">
+<section class="kolumna">
 
-        <h2>Lista parków</h2>
+<h2 class="info">Lokalizacja Parków Narodowych</h2>
+<p>Kliknij w nazwę, aby dowiedzieć się więcej...</p>
 
+<div class="lista-parkow" id="lista">
+      
+      
+    <ul id="listaParkow"></ul>
+
+        <!-- Lista parków narodowych w Polsce 
         <ul>
             <li>Babiogórski Park Narodowy</li>
             <li>Białowieski Park Narodowy</li>
@@ -81,28 +152,358 @@
             <li>Wigierski Park Narodowy</li>
             <li>Woliński Park Narodowy</li>
         </ul>
+        -->
+    
+</div>
 
+
+
+    <div class="przyciski">
+      <button id="dol">Przewiń na dół</button>
+      <button id="gora">Przewiń na górę</button>
     </div>
-        </section>
-    </main>
 
-    <footer>
+<div id="mapa"></div>
+
+<div id="pogoda"></div>
+
+<div id="debug"></div>
+
+
+<div class="przyciski">
+    <button id="openModal">
+        Komunikaty Ministerstwa Klimatu i Ochrony Środowiska w sprawie Parków Narodowych
+    </button>
+</div>
+    <p>
+        ...
+    </p>
+
+
+<div class="modal" id="modal">
+ <div class="modal-content">
+  <button id="closeModal" class="close-btn">
+  </button>
+ <h2>Najnowszy komunikat Ministerstwa Klimatu i Ochrony Środowiska</h2>
+   <p>(Poz.29) Zarządzenie Ministra Klimatu i Środowiska z dnia 19 czerwca 2026 r. zmieniające zarządzenie w sprawie zadań ochronnych dla Magurskiego Parku Narodowego na lata 2025–2026.
+   </p><a href="https://dziennikustaw.gov.pl/DU/2026/29" target="_blank">Zobacz pełny tekst komunikatu</a>
+  </div>
+</div>
+
+</section>
+</main>
+
+<footer>
     <div class="footer-content">
         <p>&copy; 2026 Projektowanie Serwisów WWW</p>
     </div>
 </footer>
 
-<script>
 
-const hamburger =
+
+<script src="assets/js/script.js"></script>
+
+<!-- to jest js do obsługi przycisków przewijania listy parków narodowych, ale nie działa poprawnie, więc jest wyłączony-->
+<script>
+  const lista = document.querySelector("#lista");
+  const przycisk_dol = document.querySelector("#dol");
+  const przycisk_gora = document.querySelector("#gora");
+
+  let pozycja = 0;
+
+  przycisk_dol.addEventListener("click", () => {
+        pozycja = Math.max(0, lista.scrollTop + 55);
+    lista.scrollTo({
+        top: pozycja,
+        behavior: "smooth"
+        });
+    });
+
+   przycisk_gora.addEventListener("click", () => {
+        lista.scrollTo({
+        top: 0,
+        behavior: "smooth"
+        });
+  });
+</script>
+        
+
+
+<script>
+  const hamburger =
     document.querySelector('#menu-toggle');
 
-const menu =
+  const menu =
     document.querySelector('.menu');
 
-hamburger.addEventListener('click', () => {
+  hamburger.addEventListener('click', () => {
     menu.classList.toggle('active');
 });
+</script>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+console.log("Załadowano mapę Leaflet");
+
+/*
+document.querySelector("#debug").innerHTML =
+    "Załadowano mapę Leaflet";
+    
+*/
+
+
+
+const listaParkow =
+    document.querySelector("#listaParkow");
+
+const pogoda =
+    document.querySelector("#pogoda");
+
+function formatujDzien(dataISO){
+
+    const dni = [
+        "Niedziela",
+        "Poniedziałek",
+        "Wtorek",
+        "Środa",
+        "Czwartek",
+        "Piątek",
+        "Sobota"
+    ];
+
+    const d = new Date(dataISO);
+
+    return `${dni[d.getDay()]} (${d.toLocaleDateString("pl-PL")})`;
+}
+
+/* mapa Leaflet */
+let mapa =
+    L.map("mapa")
+    .setView(
+        [52.0, 19.0],
+        6
+    );
+
+L.tileLayer(
+    "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+    {
+        attribution:
+            "&copy; OpenStreetMap"
+    }
+).addTo(mapa);
+
+let marker;
+
+
+
+fetch("assets/data/parks.json")
+
+    .then(response => {
+
+        if (!response.ok) {
+            throw new Error("Nie można wczytać parks.json");
+        }
+
+        return response.json();
+
+    })
+
+    .then(parki => {
+
+        parki.forEach(park => {
+
+            const li =
+                document.createElement("li");
+
+            li.textContent =
+                `${park.nazwa} (${park.rok})`;
+
+            li.style.cursor = "pointer";
+
+            listaParkow.appendChild(li);
+
+            li.addEventListener("click", () => {
+
+                /* usunięcie poprzedniego podświetlenia */
+
+                document
+                    .querySelectorAll("#listaParkow li")
+                    .forEach(el => {
+
+                        el.classList.remove("wybrany");
+
+                    });
+
+                /* podświetlenie klikniętego elementu */
+
+                li.classList.add("wybrany");
+
+    /* pobranie pogody */
+
+    pogoda.innerHTML =
+    "<p>🔄 Ładowanie danych pogodowych...</p>";
+
+     fetch(
+`https://api.open-meteo.com/v1/forecast?latitude=${park.lat}&longitude=${park.lon}&current=temperature_2m,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&forecast_days=3`
+)
+     .then(response => response.json())
+
+        
+     .then(data => {
+
+    function formatujDzien(dataISO){
+
+        const dni = [
+            "Niedziela",
+            "Poniedziałek",
+            "Wtorek",
+            "Środa",
+            "Czwartek",
+            "Piątek",
+            "Sobota"
+        ];
+
+        const dataObj =
+            new Date(dataISO);
+
+        return `${dni[dataObj.getDay()]} (${dataObj.toLocaleDateString("pl-PL")})`;
+    }
+
+    pogoda.innerHTML = `
+
+        <h3>${park.nazwa}</h3>
+
+        <p>
+            <strong>Województwo:</strong>
+            ${park.wojewodztwo}
+        </p>
+
+        <p>
+            <strong>Siedziba:</strong>
+            ${park.siedziba}
+        </p>
+
+        <hr>
+
+        <h4>Aktualna pogoda</h4>
+
+        <p>
+            🌡 <strong>Temperatura:</strong>
+            ${data.current.temperature_2m} °C
+        </p>
+
+        <p>
+            💨 <strong>Prędkość wiatru:</strong>
+            ${data.current.wind_speed_10m} km/h
+        </p>
+
+        <hr>
+
+        <h4>Prognoza na 3 dni</h4>
+
+        <table>
+
+            <tr>
+                <th>Dzień</th>
+                <th>Min</th>
+                <th>Max</th>
+                <th>Opady</th>
+            </tr>
+
+            <tr>
+                <td>${formatujDzien(data.daily.time[0])}</td>
+                <td>${data.daily.temperature_2m_min[0]} °C</td>
+                <td>${data.daily.temperature_2m_max[0]} °C</td>
+                <td>${data.daily.precipitation_sum[0]} mm</td>
+            </tr>
+
+            <tr>
+                <td>${formatujDzien(data.daily.time[1])}</td>
+                <td>${data.daily.temperature_2m_min[1]} °C</td>
+                <td>${data.daily.temperature_2m_max[1]} °C</td>
+                <td>${data.daily.precipitation_sum[1]} mm</td>
+            </tr>
+
+            <tr>
+                <td>${formatujDzien(data.daily.time[2])}</td>
+                <td>${data.daily.temperature_2m_min[2]} °C</td>
+                <td>${data.daily.temperature_2m_max[2]} °C</td>
+                <td>${data.daily.precipitation_sum[2]} mm</td>
+            </tr>
+
+        </table>
+
+    `;
+
+
+    if(marker){
+
+    mapa.removeLayer(marker);
+
+    }
+    marker =
+
+    L.marker(
+        [
+            park.lat,
+            park.lon
+        ])
+
+    .addTo(mapa)
+
+    .bindPopup(`
+    <strong>${park.nazwa}</strong>
+    <br>
+    Województwo: ${park.wojewodztwo}
+    <br>
+    Siedziba: ${park.siedziba}
+`);
+
+
+    marker.openPopup();
+
+    mapa.setView(
+    [
+        park.lat,
+        park.lon
+    ],
+    10
+    );
+
+
+
+
+
+
+
+
+
+})
+
+
+                .catch(error => {
+
+                    console.error(error);
+
+                    pogoda.innerHTML =
+                        "<p>Nie udało się pobrać danych pogodowych.</p>";
+
+                });
+
+            });
+
+        });
+
+    })
+
+    .catch(error => {
+
+        console.error(error);
+
+        listaParkow.innerHTML =
+            "<li>Błąd odczytu pliku JSON</li>";
+
+    });
 
 </script>
 

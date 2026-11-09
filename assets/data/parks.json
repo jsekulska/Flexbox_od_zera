@@ -1,0 +1,209 @@
+[
+  {
+    "id": 1,
+    "nazwa": "Babiogórski Park Narodowy",
+    "rok": 1954,
+    "wojewodztwo": "małopolskie",
+    "siedziba": "Zawoja",
+    "lat": 49.573,
+    "lon": 19.529
+  },
+  {
+    "id": 2,
+    "nazwa": "Białowieski Park Narodowy",
+    "rok": 1932,
+    "wojewodztwo": "podlaskie",
+    "siedziba": "Białowieża",
+    "lat": 52.703,
+    "lon": 23.873
+  },
+  {
+    "id": 3,
+    "nazwa": "Biebrzański Park Narodowy",
+    "rok": 1993,
+    "wojewodztwo": "podlaskie",
+    "siedziba": "Osowiec-Twierdza",
+    "lat": 53.483,
+    "lon": 22.650
+  },
+  {
+    "id": 4,
+    "nazwa": "Bieszczadzki Park Narodowy",
+    "rok": 1973,
+    "wojewodztwo": "podkarpackie",
+    "siedziba": "Ustrzyki Górne",
+    "lat": 49.131,
+    "lon": 22.620
+  },
+  {
+    "id": 5,
+    "nazwa": "Drawieński Park Narodowy",
+    "rok": 1990,
+    "wojewodztwo": "lubuskie",
+    "siedziba": "Drawno",
+    "lat": 53.219,
+    "lon": 15.763
+  },
+  {
+    "id": 6,
+    "nazwa": "Gorczański Park Narodowy",
+    "rok": 1981,
+    "wojewodztwo": "małopolskie",
+    "siedziba": "Poręba Wielka",
+    "lat": 49.551,
+    "lon": 20.108
+  },
+  {
+    "id": 7,
+    "nazwa": "Kampinoski Park Narodowy",
+    "rok": 1959,
+    "wojewodztwo": "mazowieckie",
+    "siedziba": "Izabelin",
+    "lat": 52.332,
+    "lon": 20.581
+  },
+  {
+    "id": 8,
+    "nazwa": "Karkonoski Park Narodowy",
+    "rok": 1959,
+    "wojewodztwo": "dolnośląskie",
+    "siedziba": "Jelenia Góra",
+    "lat": 50.770,
+    "lon": 15.740
+  },
+  {
+    "id": 9,
+    "nazwa": "Magurski Park Narodowy",
+    "rok": 1995,
+    "wojewodztwo": "podkarpackie",
+    "siedziba": "Krempna",
+    "lat": 49.511,
+    "lon": 21.449
+  },
+  {
+    "id": 10,
+    "nazwa": "Narwiański Park Narodowy",
+    "rok": 1996,
+    "wojewodztwo": "podlaskie",
+    "siedziba": "Kurowo",
+    "lat": 53.049,
+    "lon": 22.931
+  },
+  {
+    "id": 11,
+    "nazwa": "Ojcowski Park Narodowy",
+    "rok": 1956,
+    "wojewodztwo": "małopolskie",
+    "siedziba": "Ojców",
+    "lat": 50.213,
+    "lon": 19.828
+  },
+  {
+    "id": 12,
+    "nazwa": "Park Narodowy Gór Stołowych",
+    "rok": 1993,
+    "wojewodztwo": "dolnośląskie",
+    "siedziba": "Kudowa-Zdrój",
+    "lat": 50.484,
+    "lon": 16.339
+  },
+  {
+    "id": 13,
+    "nazwa": "Park Narodowy Bory Tucholskie",
+    "rok": 1996,
+    "wojewodztwo": "pomorskie",
+    "siedziba": "Charzykowy",
+    "lat": 53.756,
+    "lon": 17.532
+  },
+  {
+    "id": 14,
+    "nazwa": "Pieniński Park Narodowy",
+    "rok": 1932,
+    "wojewodztwo": "małopolskie",
+    "siedziba": "Krościenko nad Dunajcem",
+    "lat": 49.418,
+    "lon": 20.414
+  },
+  {
+    "id": 15,
+    "nazwa": "Poleski Park Narodowy",
+    "rok": 1990,
+    "wojewodztwo": "lubelskie",
+    "siedziba": "Urszulin",
+    "lat": 51.396,
+    "lon": 23.200
+  },
+  {
+    "id": 16,
+    "nazwa": "Roztoczański Park Narodowy",
+    "rok": 1974,
+    "wojewodztwo": "lubelskie",
+    "siedziba": "Zwierzyniec",
+    "lat": 50.611,
+    "lon": 22.972
+  },
+  {
+    "id": 17,
+    "nazwa": "Słowiński Park Narodowy",
+    "rok": 1967,
+    "wojewodztwo": "pomorskie",
+    "siedziba": "Smołdzino",
+    "lat": 54.736,
+    "lon": 17.309
+  },
+  {
+    "id": 18,
+    "nazwa": "Świętokrzyski Park Narodowy",
+    "rok": 1950,
+    "wojewodztwo": "świętokrzyskie",
+    "siedziba": "Bodzentyn",
+    "lat": 50.859,
+    "lon": 20.899
+  },
+  {
+    "id": 19,
+    "nazwa": "Tatrzański Park Narodowy",
+    "rok": 1954,
+    "wojewodztwo": "małopolskie",
+    "siedziba": "Zakopane",
+    "lat": 49.251,
+    "lon": 19.981
+  },
+  {
+    "id": 20,
+    "nazwa": "Park Narodowy Ujście Warty",
+    "rok": 2001,
+    "wojewodztwo": "lubuskie",
+    "siedziba": "Chyrzyno",
+    "lat": 52.574,
+    "lon": 14.714
+  },
+  {
+    "id": 21,
+    "nazwa": "Wielkopolski Park Narodowy",
+    "rok": 1957,
+    "wojewodztwo": "wielkopolskie",
+    "siedziba": "Jeziory",
+    "lat": 52.259,
+    "lon": 16.808
+  },
+  {
+    "id": 22,
+    "nazwa": "Wigierski Park Narodowy",
+    "rok": 1989,
+    "wojewodztwo": "podlaskie",
+    "siedziba": "Krzywe",
+    "lat": 54.067,
+    "lon": 23.087
+  },
+  {
+    "id": 23,
+    "nazwa": "Woliński Park Narodowy",
+    "rok": 1960,
+    "wojewodztwo": "zachodniopomorskie",
+    "siedziba": "Międzyzdroje",
+    "lat": 53.943,
+    "lon": 14.458
+  }
+]

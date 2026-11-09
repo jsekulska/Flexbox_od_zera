@@ -6,7 +6,7 @@
 }
 
 html {
-    font-size: calc(16px + 0.2vw);
+    font-size: calc(16px + 0.3vw);
 }
 /* Cała strona */
 
@@ -22,11 +22,63 @@ body {
 header {
     background-color: #2c3e50;
     color: white;
-    padding: 20px;
     text-align: center;
-  
 }
 
+header h1 {
+    padding: 20px;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.hero {
+
+    height: 65vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.35),
+            rgba(0,0,0,0.35)
+        ),
+        url("assets/img/tpn.avif");
+
+    background-size: cover;
+    background-position: center;
+
+
+    animation:
+        zoomHero
+        20s
+        linear
+        infinite
+        alternate;
+}
+
+@keyframes zoomHero {
+
+    from {
+
+        background-size: 100%;
+
+    }
+
+    to {
+
+        background-size: 115%;
+
+    }
+}
 
 /* Przycisk hamburgera */
 #menu-toggle {
@@ -94,8 +146,15 @@ header {
 */
 
 nav {
-    background-color: #34495e;
+    background-color: #34495eaa;
+    /* position: sticky/fixed; */
     
+    position: sticky;
+    top: 0;
+    
+
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 nav ul {
@@ -110,7 +169,7 @@ nav li {
 
 nav a {
     display: block;
-    padding: 15px 25px;
+    padding: 20px 25px;
     color: white;
     text-decoration: none;
 
@@ -133,6 +192,103 @@ nav a:hover {
 }*/
 
 
+.menu {
+    display: flex;
+    list-style: none;
+    background-color: #2c3e50;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    display: block;
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+}
+.dropdown > a::after {
+
+    content: " ▼";
+    padding-left: 10px;
+    font-size: 0.8em;
+    position: relative;
+    display: inline-block;
+
+    transition: 0.3s;
+}
+
+.dropdown:hover > a::after {
+    transform: rotate(180deg); padding-right: 15px 25px;
+}
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    background-color: #34495e;
+    min-width: 280px;
+}
+/*Pokaż podmenu po najechaniu*/
+.dropdown:hover .submenu {
+    display: block;
+}
+
+.submenu a {
+    padding: 12px;
+    background-color: #34495e;
+}
+
+.submenu a:hover {
+    background-color: #4a6785;
+}
+
+
+.submenu {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+.dropdown:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+}
+
+/*ikonka emoji*/
+/*
+.submenu a::before {
+
+    content: "🌲 ";
+   margin-right: 5px;
+}
+*/
+
+
+/*Bootstrap ikona drzewa*/
+.submenu i {
+    color: #59c36a;
+    transition: all 0.3s ease;
+}
+/*efekt hoover dla całego wiersza*/
+.submenu a:hover {
+
+    background-color: #4a6785;
+
+    padding-left: 20px;
+}
+/*efekt hoover dla choinki*/
+.submenu a:hover i {
+
+    color: #8cff9a;
+    transform: scale(1.3) rotate(-8deg);
+    transform: scale(1.3);
+    filter: drop-shadow(
+        0 0 5px lightgreen
+    );
+}
+
 
 /* Główna zawartość */
 main {
@@ -141,8 +297,8 @@ main {
     display: flex;
     gap: clamp(1rem, 2vw, 3rem);
 
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 8%;
+    padding-right: 8%;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -157,17 +313,194 @@ p {
     background-color: #ecf0f1;
     padding: 20px;
     border-radius: 8px;
+    min-height: 400px;
 }
 
 .kolumna h2 {
     margin-bottom: 15px;
+
+/*chcę animować tło pod nagłowkiem*/
+    position: relative;
 }
 
+.kolumna h2::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -5px;
+
+    width: 0;
+    height: 52px;
+
+    background: rgba(37, 177, 91, 0.384);
+
+    transition: 0.3s;
+}
+
+.kolumna h2:hover::before {
+    width: 100%;
+}
+
+
+h3 {
+    margin-bottom: 10px;
+}
+
+
+hr {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/*galeria*/
+.galeria {
+
+    overflow: hidden;
+    width: 100%;
+    border: 2px solid #ccc;
+    padding: 20px;
+}
+
+.tor {
+
+    display: flex;
+    gap: 20px;
+    animation: przesuwanie 30s linear infinite;
+}
+
+.tor img {
+    width: 250px;
+}
+/*animacja galerii*/
+@keyframes przesuwanie {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-2900px);
+    }
+}
+
+/*interakcja użytkownika z galerią*/
+.tor:hover {
+
+    animation-play-state: paused;
+    /*animation-duration: 1s;*/
+}
+
+#opisGalerii {
+
+    margin-top: 15px;
+
+    padding: 10px;
+
+    min-height: 70px;
+
+    border: 2px solid #bac2ca;
+
+    border-radius: 8px;
+
+    background: white;
+}
+
+.info::before {
+    content: "🌳 ";
+}
+/*
+p::first-letter {
+    font-size: 2em;
+    font-weight: bold;
+    color: darkgreen;
+}*/
 
 .kolumna img {
     width: 100%;
     height: auto;
 }
+
+
+.lista-parkow {
+
+    width: 100%;
+    max-width: 1000px;
+    max-height: 300px;
+    border: 2px solid #bac2ca;
+    padding: 10px 40px 40px 10px;
+    margin: 0 auto;
+    
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+
+#lista li{
+     list-style: none;
+}
+
+#lista li::before {
+    content: "✅ ";
+}
+
+
+#mapa {
+    margin-top: 20px;
+    height: 350px;
+    border: 2px solid #bac2ca;
+    border-radius: 8px;
+}
+
+
+.przyciski {
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    gap: 20px;
+}
+
+.przyciski button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2c3e50;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    }
+
+.przyciski button:hover {
+    background-color: #34495e;
+    transform: translateY(-2px);
+}
+
+.przyciski button:active {
+    transform: scale(0.95);
+}
+
+#openModal {
+    background-color: #12171b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    padding: 15px 20px;
+
+    flex: 1;
+    max-width: 350px;
+
+    transition: all 0.3s ease; 
+}
+
+
 /* Stopka 
 footer {
     background-color: #2c3e50;
@@ -176,17 +509,120 @@ footer {
     padding: 15px;
 }1*/
 /* 2 */
+
+
 footer {
     background-color: #2c3e50;
     color: white;
     padding: clamp(10px, 2vw, 20px);
 }
 
+
+/*modal*/
+/* Tło modala */
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background-color: rgba(0,0,0,0.5);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 2000;
+}
+
+/* pokazany modal */
+
+.modal.show {
+    display: flex;
+}
+
+/* zawartość modala */
+
+.modal-content {
+
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    min-width: 400px;
+    border-radius: 8px;
+    position: relative;
+}
+
+/* przycisk X */
+.close-btn {
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#pogoda {
+    margin-top: 20px;
+    text-align: left;
+    border: 4px solid #01ae26;
+    padding: 10px;
+}
+
+#pogoda table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 10px;
+}
+
+#pogoda th,
+#pogoda td {
+
+    border: 1px solid #ccc;
+
+    padding: 8px;
+
+    text-align: left;
+}
+
+#pogoda th {
+
+    background-color: #ecf0f1;
+}
+
+#listaParkow li {
+
+    padding: 5px;
+    margin-bottom: 4px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+#listaParkow li:hover {
+
+    background-color: #dcefdc;
+}
+
+.wybrany {
+
+    background-color: darkgreen;
+    color: white;
+}
+
+
 .footer-content {
     width: min(1200px, 90%);
     margin: 0 auto;
     text-align: center;
 }
+
 
 
 /* Responsywność */
@@ -242,7 +678,6 @@ footer {
         font-size: 2rem;
         cursor: pointer;
     }
-
     */
 
 
