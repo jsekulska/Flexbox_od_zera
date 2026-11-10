@@ -6,7 +6,7 @@
 }
 
 html {
-    font-size: calc(16px + 0.3vw);
+    font-size: calc(12px + 0.2vw);
 }
 /* Cała strona */
 
@@ -27,25 +27,18 @@ header {
 
 header h1 {
     padding: 20px;
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-size: clamp(1.1rem, 2vw, 2.5rem);
 }
 
 .hero {
 
     height: 65vh;
-
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
-
     align-items: center;
-
     text-align: center;
-
     color: white;
-
     background:
         linear-gradient(
             rgba(0,0,0,0.35),
@@ -55,7 +48,6 @@ header h1 {
 
     background-size: cover;
     background-position: center;
-
 
     animation:
         zoomHero
@@ -297,8 +289,8 @@ main {
     display: flex;
     gap: clamp(1rem, 2vw, 3rem);
 
-    padding-left: 8%;
-    padding-right: 8%;
+    padding-left: 4%;
+    padding-right: 4%;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -318,6 +310,7 @@ p {
 
 .kolumna h2 {
     margin-bottom: 15px;
+    font-size: clamp(1.2rem, 1vw, 1.5rem);
 
 /*chcę animować tło pod nagłowkiem*/
     position: relative;
